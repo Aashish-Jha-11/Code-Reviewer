@@ -8,6 +8,8 @@ import "highlight.js/styles/github-dark.css";
 import axios from 'axios'
 import './App.css'
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+
 function App() {
   const [code, setCode] = useState(`function sum() {
   return 1 + 1
@@ -34,7 +36,7 @@ function App() {
     setReview('')
 
     try {
-      const response = await axios.post('http://localhost:3000/ai/get-review', { code })
+      const response = await axios.post(`${API_URL}/ai/get-review`, { code })
       setReview(response.data)
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to review code. Please try again.')
