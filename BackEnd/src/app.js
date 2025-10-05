@@ -6,7 +6,7 @@ const app = express()
 
 
 const corsOptions = {
-    origin: process.env.FRONTEND_URL || '*', 
+    origin: process.env.FRONTEND_URL || 'https://code-reviewer-frontend-beige.vercel.app/', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }
