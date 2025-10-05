@@ -8,7 +8,8 @@ import "highlight.js/styles/github-dark.css";
 import axios from 'axios'
 import './App.css'
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+
+const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:3000').replace(/\/$/, '')
 
 function App() {
   const [code, setCode] = useState(`function sum() {
